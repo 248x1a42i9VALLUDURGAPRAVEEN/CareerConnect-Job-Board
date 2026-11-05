@@ -48,30 +48,94 @@ class Job {
   bool get isInternship =>
       jobType.toLowerCase().contains('intern');
 
+  // Remotive API jobs
   factory Job.fromJson(Map<String, dynamic> json) {
+    final rawId = json['id']?.toString() ?? '';
+
     return Job(
-      id: int.tryParse('${json['id'] ?? 0}') ??
-          '${json['id'] ?? ''}'.hashCode,
+      id: int.tryParse(rawId) ?? rawId.hashCode,
       title: _text(json['title'], 'Untitled role'),
-      companyName: _text(json['company_name'], 'Unknown company'),
+      companyName: _text(
+        json['company_name'],
+        'Unknown company',
+      ),
       location: _text(
         json['candidate_required_location'],
         'Not specified',
       ),
-      jobType: _text(json['job_type'], 'Not specified'),
+      jobType: _text(
+        json['job_type'],
+        'Not specified',
+      ),
       description: _text(
         json['description'],
         'No description provided.',
       ),
-      salary: _text(json['salary'], 'Not disclosed'),
-      category: _text(json['category'], 'Other'),
+      salary: _text(
+        json['salary'],
+        'Not disclosed',
+      ),
+      category: _text(
+        json['category'],
+        'Other',
+      ),
       url: _text(json['url'], ''),
-      companyLogoUrl: _text(json['company_logo'], ''),
+      companyLogoUrl: _text(
+        json['company_logo'],
+        '',
+      ),
       source: 'Remotive',
     );
   }
 
-  factory Job.fromAdzunaJson(Map<String, dynamic> json) {
+  // Supabase Admin-added jobs
+  factory Job.fromSupabaseJson(
+    Map<String, dynamic> json,
+  ) {
+    final rawId = json['id']?.toString() ?? '';
+
+    return Job(
+      id: int.tryParse(rawId) ?? rawId.hashCode,
+      title: _text(
+        json['title'],
+        'Untitled role',
+      ),
+      companyName: _text(
+        json['company_name'],
+        'Unknown company',
+      ),
+      location: _text(
+        json['location'],
+        'Not specified',
+      ),
+      jobType: _text(
+        json['job_type'],
+        'Not specified',
+      ),
+      description: _text(
+        json['description'],
+        'No description provided.',
+      ),
+      salary: _text(
+        json['salary'],
+        'Not disclosed',
+      ),
+      category: _text(
+        json['category'],
+        'Other',
+      ),
+      url: _text(
+        json['apply_url'],
+        '',
+      ),
+      source: 'Admin Added',
+    );
+  }
+
+  // Adzuna API jobs
+  factory Job.fromAdzunaJson(
+    Map<String, dynamic> json,
+  ) {
     final location = json['location'];
     final company = json['company'];
 
@@ -86,31 +150,53 @@ class Job {
       salary = 'From ₹$salaryMin';
     }
 
+    final rawId = json['id']?.toString() ?? '';
+
     return Job(
-      id: int.tryParse('${json['id'] ?? 0}') ??
-          '${json['id'] ?? ''}'.hashCode,
-      title: _text(json['title'], 'Untitled role'),
+      id: int.tryParse(rawId) ?? rawId.hashCode,
+      title: _text(
+        json['title'],
+        'Untitled role',
+      ),
       companyName: company is Map
-          ? _text(company['display_name'], 'Unknown company')
+          ? _text(
+              company['display_name'],
+              'Unknown company',
+            )
           : 'Unknown company',
       location: location is Map
-          ? _text(location['display_name'], 'Not specified')
+          ? _text(
+              location['display_name'],
+              'Not specified',
+            )
           : 'Not specified',
-      jobType: _text(json['contract_time'], 'Not specified'),
+      jobType: _text(
+        json['contract_time'],
+        'Not specified',
+      ),
       description: _text(
         json['description'],
         'No description provided.',
       ),
       salary: salary,
       category: json['category'] is Map
-          ? _text(json['category']['label'], 'Other')
+          ? _text(
+              json['category']['label'],
+              'Other',
+            )
           : 'Other',
-      url: _text(json['redirect_url'], ''),
+      url: _text(
+        json['redirect_url'],
+        '',
+      ),
       source: 'Adzuna',
     );
   }
 
-  static String _text(dynamic value, String fallback) {
+  static String _text(
+    dynamic value,
+    String fallback,
+  ) {
     final result = value?.toString().trim() ?? '';
     return result.isEmpty ? fallback : result;
   }

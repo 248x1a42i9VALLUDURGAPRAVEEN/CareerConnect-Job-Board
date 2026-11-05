@@ -1,14 +1,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'providers/job_provider.dart';
 import 'providers/student_provider.dart';
 import 'providers/application_provider.dart';
 import 'screens/splash_screen.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Supabase
+  await Supabase.initialize(
+    url: 'https://ybgumbzndrjjacozfwpm.supabase.co',
+    publishableKey: 'sb_publishable_V8-Uhk02D2epVZA4ZXUtmQ_kMhiNjw1',
+  );
 
   runApp(
     MultiProvider(
