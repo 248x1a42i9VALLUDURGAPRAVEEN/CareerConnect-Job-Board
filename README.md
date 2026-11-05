@@ -1,69 +1,224 @@
-# CareerConnect – Flutter Job Board
+\# CareerConnect – Flutter Job Board
 
-A beginner-friendly Flutter Android project for browsing remote job listings,
-viewing job details, filtering jobs, and validating a demo job application form.
 
-## Features
-- Job listings loaded from the Remotive public API.
-- Search by job title, company, or category.
-- Filter by location and job type.
-- Job detail screen.
-- Validated application form.
-- Provider (`ChangeNotifier`) shared state.
-- Loading, error/retry, empty, and data states.
-- Widget test.
 
-## Requirements
-- Flutter 3.35 or newer (stable channel)
-- Dart with null safety
-- Android Studio, Flutter and Dart plugins
-- JDK 17
-- Android emulator or physical Android phone
+\*\*CareerConnect\*\* is a Flutter-based Job Board Android application that helps students and job seekers explore remote job opportunities.
 
-## Run the project
-1. Install Flutter and Android Studio.
-2. Open this folder in Android Studio.
-3. Run `flutter doctor` and resolve Android toolchain issues.
-4. Run `flutter pub get`.
-5. Run `flutter run`.
 
-## API
-This project requests job listings from:
+
+\## Features
+
+
+
+\- Browse remote job opportunities.
+
+\- Search jobs by title, company, or category.
+
+\- Filter jobs by location and job type.
+
+\- View detailed job descriptions.
+
+\- Apply screen with form validation.
+
+\- Student registration and login.
+
+\- Forgot password functionality.
+
+\- Colourful and user-friendly interface.
+
+\- Loading, error, and empty-result handling.
+
+\- State management using Provider.
+
+
+
+\## Technologies Used
+
+
+
+\- Flutter
+
+\- Dart
+
+\- Android Studio
+
+\- Provider
+
+\- Remotive Jobs API
+
+\- SharedPreferences
+
+
+
+\## API
+
+
+
+CareerConnect uses the Remotive API to retrieve remote job listings.
+
+
+
+API endpoint:
+
+
+
 https://remotive.com/api/remote-jobs?limit=50
 
-Review the API's current terms, usage limits, and attribution requirements before
-public release. The API contains remote-job listings; it is not a comprehensive
-database of local vacancies.
 
-## Application form limitation
-The application form validates user input and displays a demo confirmation.
-It does not transmit personal information to employers or store applications.
-Applicants should follow the original job listing URL to apply with the employer.
 
-## Tests
-Run:
-`flutter test`
+\## Requirements
 
-## Release APK
-Run:
-`flutter build apk --release`
 
-APK output:
-`build/app/outputs/flutter-apk/app-release.apk`
 
-Install and test the APK on a physical Android device.
+\- Flutter SDK 3.35 or later
 
-## Suggested team contributions
-Update this section with your actual team member names and work:
-- Member 1: Home screen and job model
-- Member 2: API service and Provider
-- Member 3: Details, filters, application form and testing
+\- Dart SDK
 
-All team members should make regular commits to the shared GitHub repository.
+\- Android Studio
 
-## Before submission
-- Add at least three genuine screenshots.
-- Update member names and actual contributions.
-- Maintain a defect log with reproduction steps and fixed status.
-- Verify the API works at demonstration time.
-- Test the release APK on a physical phone.
+\- Android Emulator or Android Phone
+
+
+
+\## Installation and Setup
+
+
+
+1\. Clone this repository:
+
+
+
+&#x20;  ```bash
+
+&#x20;  git clone https://github.com/248x1a42i9VALLUDURGAPRAVEEN/CareerConnect-Job-Board.git
+
+&#x20;  ```
+
+
+
+2\. Open the project folder:
+
+
+
+&#x20;  ```bash
+
+&#x20;  cd CareerConnect-Job-Board
+
+&#x20;  ```
+
+
+
+3\. Install dependencies:
+
+
+
+&#x20;  ```bash
+
+&#x20;  flutter pub get
+
+&#x20;  ```
+
+
+
+4\. Run the application:
+
+
+
+&#x20;  ```bash
+
+&#x20;  flutter run
+
+&#x20;  ```
+
+
+
+\## Testing
+
+
+
+Run the widget tests using:
+
+
+
+```bash
+
+flutter test
+
+```
+
+
+
+Check code quality using:
+
+
+
+```bash
+
+flutter analyze
+
+```
+
+
+
+\## Application Notes
+
+
+
+\- The application form demonstrates input validation and confirmation.
+
+\- Applications are not transmitted to or stored on a backend server.
+
+\- Users can visit the original job listing to apply.
+
+\- Authentication in this demo uses local device storage and is not production-grade authentication.
+
+
+
+\## Team Contributions
+
+
+
+Update this section with your actual team members and their contributions.
+
+
+
+\- Member 1 – Flutter UI and Home Screen
+
+\- Member 2 – API Integration and Job Provider
+
+\- Member 3 – Job Details, Filters and Application Form
+
+
+
+\## Future Enhancements
+
+
+
+\- Firebase authentication
+
+\- Backend application management
+
+\- Email verification
+
+\- Saved jobs
+
+\- Job application tracking
+
+
+
+\## Developer
+
+
+
+\*\*Project Name:\*\* CareerConnect – Flutter Job Board
+
+
+
+\*\*Platform:\*\* Android
+
+
+
+\*\*Developed Using:\*\* Flutter and Dart
+
+
+
