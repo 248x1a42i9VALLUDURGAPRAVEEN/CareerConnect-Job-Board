@@ -222,3 +222,37 @@ Update this section with your actual team members and their contributions.
 
 
 
+\## Screenshots
+
+
+
+\### 1. Splash Screen
+
+!\[Splash Screen](screenshots/splash.png)
+
+
+
+\### 2. Login Screen
+
+!\[Login Screen](screenshots/login.png)
+
+
+
+\### 3. Forgot Password Screen
+
+!\[Forgot Password](screenshots/forgot\_password.png)
+
+
+
+\### 4. Home Screen
+
+!\[Home Screen](screenshots/home.png)
+
+
+
+\### 5. Apply Screen
+
+!\[Apply Screen](screenshots/apply.png)
+
+
+
